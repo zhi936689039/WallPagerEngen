@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+def build=dep.build
+android {
+    compileSdkVersion build.compileSdkVersion
+    defaultConfig {
+        applicationId build.App_applicationId
+        minSdkVersion build.minSdkVersion
+        targetSdkVersion build.targetSdkVersion
+        versionCode build.BuildVersionCode
+        versionName build.BuildVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility build.VERSION_1_8
+        targetCompatibility build.VERSION_1_8
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    // 自定义APK安装包名
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                output ->
+                    outputFileName = "4DWallPager${defaultConfig.versionName}_${releaseTime()}_${buildType.name}.apk"
+            }
+    }
+}
+static def releaseTime() {
+    return new Date().format("yyyyMMdd-HHmmss")
+}
+
+dependencies {
+
+    implementation fileTree(dir: '../libs', include: ['*.jar','*.aar'])
+    testImplementation dep.junit
+    implementation dep.androidx.appcompat
+    androidTestImplementation dep.androidx.runner
+    androidTestImplementation dep.androidx.espresso
+    implementation dep.androidx.constraintlayout
+
+    //Retrofit
+    implementation dep.square.retrofit
+    implementation(dep.square.adapter) {
+        exclude module: 'rxjava'
+    }
+    implementation dep.square.retrofit_converter_gson
+    //OKhttp
+    implementation dep.square.okhttp
+    implementation dep.square.okhttp_logger
+    //rxlifecycle4
+    implementation dep.rxlifecycle4.rxlifecycle
+    implementation dep.rxlifecycle4.components
+    //buterKnife
+    api dep.jakewharton.butterknife
+    annotationProcessor dep.jakewharton.butterknife_processor
+    //eventBus
+    implementation dep.eventbus
+}
