@@ -59,12 +59,25 @@ dependencies {
     //OKhttp
     implementation dep.square.okhttp
     implementation dep.square.okhttp_logger
-    //rxlifecycle4
-    implementation dep.rxlifecycle4.rxlifecycle
-    implementation dep.rxlifecycle4.components
+    //rxlifecycle2
+    implementation dep.rxlifecycle2.rxlifecycle
+    implementation dep.rxlifecycle2.components
     //buterKnife
     api dep.jakewharton.butterknife
     annotationProcessor dep.jakewharton.butterknife_processor
     //eventBus
     implementation dep.eventbus
+    //recycleView
+    implementation dep.androidx.recyclerview
+    //refrshLayout
+    implementation dep.smartrefresh.SmartRefreshLayout
+    implementation dep.smartrefresh.SmartRefreshHeader
+    //glide
+    implementation dep.glide.glide
+    implementation dep.glide.okhttp3
+
+    //RxAndroid jar包引入异常导致java.lang.NoClassDefFoundError: Failed resolution of: Lio/reactivex/android/sche
+    implementation dep.rxbinding
+    implementation dep.baseRecycleViewAdapter
+
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="theme_color">#000000</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,4 +8,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="color_28293C">#28293C</color>
+    <color name="color_000B70">#000B70</color>
+    <color name="color_3282F6">#3282F6</color>
+    <color name="color_243040">#0D1117</color>
+    <color name="color_9">#999999</color><!--灰色 -->
+    <color name="color_5e">#5E5E5E</color>
 </resources>

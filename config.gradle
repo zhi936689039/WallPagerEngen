@@ -18,16 +18,16 @@ dep.androidx = androidx
 
 def square = [:]
 square.retrofit = 'com.squareup.retrofit2:retrofit:2.5.0'
-square.retrofit_converter_gson = 'com.squareup.retrofit2:converter-gson:2.5.0'
+square.retrofit_converter_gson = 'com.squareup.retrofit2:converter-gson:2.2.0'
 square.adapter='com.squareup.retrofit2:adapter-rxjava2:2.5.0'
 square.okhttp = 'com.squareup.okhttp3:okhttp:4.8.1'
 square.okhttp_logger = 'com.squareup.okhttp3:logging-interceptor:4.8.1'
 dep.square = square
 
-def rxlifecycle4=[:]
-rxlifecycle4.rxlifecycle='com.trello.rxlifecycle4:rxlifecycle:4.0.2'
-rxlifecycle4.components='com.trello.rxlifecycle4:rxlifecycle-components:4.0.2'
-dep.rxlifecycle4=rxlifecycle4
+def rxlifecycle2=[:]
+rxlifecycle2.rxlifecycle='com.trello.rxlifecycle2:rxlifecycle:2.1.0'
+rxlifecycle2.components='com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+dep.rxlifecycle2=rxlifecycle2
 
 def jakewharton = [:]
 jakewharton.butterknife = 'com.jakewharton:butterknife:10.2.3'
@@ -37,23 +37,30 @@ dep.jakewharton = jakewharton
 
 
 def smartrefresh=[:]
-smartrefresh.SmartRefreshLayout='com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-7'
-smartrefresh.SmartRefreshHeader='com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-7'
+smartrefresh.SmartRefreshLayout='io.github.scwang90:refresh-layout-kernel:2.0.5'
+smartrefresh.SmartRefreshHeader='io.github.scwang90:refresh-header-classics:2.0.5'
 dep.smartrefresh=smartrefresh
+
+def glide=[:]
+glide.glide='com.github.bumptech.glide:glide:4.9.0'
+glide.okhttp3='com.github.bumptech.glide:okhttp3-integration:4.0.0-RC1'
+dep.glide=glide
+
 
 dep.junit = 'junit:junit:4.12'
 dep.eventbus = 'org.greenrobot:eventbus:3.1.1'
-dep.baseRecycleViewAdapter='com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+dep.baseRecycleViewAdapter='com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.36'
+dep.rxbinding='com.jakewharton.rxbinding3:rxbinding:3.0.0-alpha2'
 
 
 def build = [:]
 build.javaVersion = JavaVersion.VERSION_1_8
-build.compileSdkVersion = 30
+build.compileSdkVersion = 31
 build.minSdkVersion = 21
-build.targetSdkVersion = 30
+build.targetSdkVersion = 31
 build.BuildVersionCode = 1
 build.BuildVersionName = "1.0.0"
-build.App_applicationId="com.wallpaper"
+build.App_applicationId="com.live.wallpaper"
 dep.build = build
 
 ext.dep = dep

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:apps="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="5dp">
+    <FrameLayout
+        android:id="@+id/fl_default"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_corner_10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_default"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+    <com.live.wallpaper.view.CornerImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        apps:all_radius_1="10dp"
+        android:scaleType="fitXY" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="12dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/iv_live"/>
+        <com.live.wallpaper.view.HollowTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:hollowTextView_background_color="@color/white"
+            android:text="LIVE"
+            android:textSize="15sp"
+            android:layout_marginTop="2dp"/>
+    </LinearLayout>
+</FrameLayout>

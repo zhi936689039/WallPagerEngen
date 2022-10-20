@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StatusBarHeightView">
+        <attr name="use_type" format="integer">
+            <enum name="use_height" value="0" />
+            <enum name="use_padding_top" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="HollowTextView">
+        <attr name="hollowTextView_background_color" format="color|reference"/>
+        <attr name="hollowTextView_corner_radius" format="dimension|reference"/>
+    </declare-styleable>
+    <declare-styleable name="OvalView">
+        <attr name="all_radius_1" format="dimension" />
+        <attr name="ul_radius_1" format="dimension" />
+        <attr name="ur_radius_1" format="dimension" />
+        <attr name="ll_radius_1" format="dimension" />
+        <attr name="lr_radius_1" format="dimension" />
+        <attr name="stroke_size_1" format="dimension" />
+        <attr name="stroke_color_1" format="color" />
+        <attr name="is_oval_1" format="boolean" />
+        <attr name="is_round_rectangle_1" format="boolean" />
+    </declare-styleable>
+</resources>
