@@ -50,7 +50,7 @@ public class VideoLiveWallpaper extends WallpaperService {
      */
     public void setToWallPaper(Context context, String videoPath) {
         try {
-            clearWallpaper();
+            WallpaperManager.getInstance(context).clear();
         } catch (IOException e) {
             e.printStackTrace();
         }
