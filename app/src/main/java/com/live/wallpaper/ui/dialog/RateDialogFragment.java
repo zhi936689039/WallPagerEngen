@@ -1,6 +1,8 @@
 package com.live.wallpaper.ui.dialog;
 
 import android.app.Dialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
@@ -14,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
 import com.live.wallpaper.R;
+import com.live.wallpaper.util.ToastUtils;
 import com.live.wallpaper.util.ValidateUtils;
 
 import butterknife.BindView;
@@ -48,6 +51,22 @@ public class RateDialogFragment extends DialogFragment {
             public void onClick(View v) {
                 mDialogFragment.show(getFragmentManager(),"dialog");
                 dismissAllowingStateLoss();
+            }
+        });
+        view.findViewById(R.id.iv_start5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ValidateUtils.hasInstallSoft(getContext(), "com.android.vending")) {
+                    dismissAllowingStateLoss();
+                    final String GOOGLE_PLAY = "com.android.vending";
+                    Uri uri = Uri.parse("market://details?id=com.live.wallpaper");
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    intent.setPackage(GOOGLE_PLAY);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                } else {
+                    ToastUtils.showShort(getContext().getResources().getString(R.string.google_play_install_tip));
+                }
             }
         });
     }

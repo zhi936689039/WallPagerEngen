@@ -59,6 +59,7 @@
             android:src="@drawable/iv_start"
             android:layout_marginStart="6dp"/>
         <ImageView
+            android:id="@+id/iv_start5"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"

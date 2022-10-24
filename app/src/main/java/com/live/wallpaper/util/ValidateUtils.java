@@ -1,5 +1,8 @@
 package com.live.wallpaper.util;
 
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.text.TextUtils;
 
 import java.util.List;
@@ -135,4 +138,24 @@ public class ValidateUtils {
         }
         return true;
     }
+
+    /**
+     * 检测手机是否安装某些软件
+     * @param context
+     * @param packgeName  包名
+     * @return  true安装  false没安装
+     */
+    public  static boolean hasInstallSoft(Context context, String packgeName) {
+        boolean isHasInstall=false;
+        PackageManager packageManager = context.getPackageManager();
+        List<PackageInfo> packages = packageManager.getInstalledPackages(PackageManager.GET_UNINSTALLED_PACKAGES);
+        for (PackageInfo packageInfo : packages) {
+            if (packageInfo.packageName.equals(packgeName)) {
+                isHasInstall = true;
+                break;
+            }
+        }
+        return isHasInstall;
+    }
+
 }
