@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">4D WallPaper</string>
+    <string name="set_Wallpager">壁紙を設定する</string>
+    <string name="Wallpager_loading">壁紙を読み込んでいます...</string>
+    <string name="setting">設定</string>
+    <string name="evaluation">評価</string>
+    <string name="Privacy_Policy">プライバシーポリシー</string>
+    <string name="Rate_Us">お問い合わせ</string>
+    <string name="feed_back_content">このアプリを楽しんでいますか? 今すぐ 5 つ星のレビューを送信して、Google Play ストアを始めましょう!</string>
+    <string name="feed_back_title">フィードバック</string>
+    <string name="feed_back_tips">フィードバックをお待ちしております!</string>
+    <string name="email">Eメール...</string>
+    <string name="suggestion">あなたの提案...</string>
+    <string name="submit">参加する</string>
+    <string name="feed_back_success">フィードバックの成功</string>
+    <string name="splash_content">3D LiveWallPager Prime</string>
+</resources>

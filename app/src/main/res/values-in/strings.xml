@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">4D WallPaper</string>
+    <string name="set_Wallpager">memasang wallpaper</string>
+    <string name="Wallpager_loading">wallpaper sedang dimuat...</string>
+    <string name="setting">mempersiapkan</string>
+    <string name="evaluation">Evaluasi</string>
+    <string name="Privacy_Policy">Kebijakan pribadi</string>
+    <string name="Rate_Us">hubungi kami</string>
+    <string name="feed_back_content">Nikmati aplikasi ini? Beri kami ulasan bintang 5 sekarang untuk memulai di Google Play Store!</string>
+    <string name="feed_back_title">masukan</string>
+    <string name="feed_back_tips">Kami dengan tulus menantikan tanggapan Anda, terima kasih!</string>
+    <string name="email">Surel...</string>
+    <string name="suggestion">saranmu...</string>
+    <string name="submit">Kirimkan</string>
+    <string name="feed_back_success">umpan balik sukses</string>
+    <string name="splash_content">3D LiveWallPager Prime</string>
+</resources>
