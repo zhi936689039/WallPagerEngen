@@ -15,4 +15,5 @@
     <string name="feed_back_success">umpan balik sukses</string>
     <string name="splash_content">3D LiveWallPager Prime</string>
     <string name="google_play_install_tip">Silakan instal toko google</string>
+    <string name="retry">Mencoba kembali</string>
 </resources>

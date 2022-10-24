@@ -15,4 +15,5 @@
     <string name="feed_back_success">フィードバックの成功</string>
     <string name="splash_content">3D LiveWallPager Prime</string>
     <string name="google_play_install_tip">Googleストアをインストールしてください</string>
+    <string name="retry">リトライ</string>
 </resources>

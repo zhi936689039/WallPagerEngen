@@ -42,6 +42,8 @@ public class LiveWallPagerPlayActivity extends BaseActivity {
     ImageView iv_return;
     @BindView(R.id.tv_set_wall_pager)
     TextView tv_set_wall_pager;
+    @BindView(R.id.tv_retry)
+    TextView tv_retry;
     private MediaPlayer mediaPlayer;
     private SurfaceHolder surfaceHolder;
     private String videoPath;
@@ -95,6 +97,12 @@ public class LiveWallPagerPlayActivity extends BaseActivity {
                 mVideoLiveWallpaper.setToWallPaper(mContext, mContext.getExternalFilesDir("downVideo").getAbsolutePath()
                         + File.separator+"1_" + picId + ".mp4");
                 finish();
+            }
+        });
+        tv_retry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                initFileDownload();
             }
         });
     }
@@ -151,6 +159,8 @@ public class LiveWallPagerPlayActivity extends BaseActivity {
                         @Override
                         public void run() {
                             ToastUtils.showShort("Download File"+errorMsg);
+                            tv_retry.setVisibility(View.VISIBLE);
+                            pbLoading.setVisibility(View.GONE);
                         }
                     });
                 }
@@ -160,6 +170,8 @@ public class LiveWallPagerPlayActivity extends BaseActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            tv_retry.setVisibility(View.GONE);
+                            pbLoading.setVisibility(View.VISIBLE);
                             if (ValidateUtils.isValidate(file.getAbsolutePath())) {
                                 playVideo(file.getAbsolutePath());
                             } else {

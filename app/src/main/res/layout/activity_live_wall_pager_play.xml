@@ -17,15 +17,28 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ProgressBar
+                android:id="@+id/pb_loading"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:minHeight="20dp"
+                android:padding="10dp"
+                android:progressDrawable="@drawable/shape_progressbar" />
+            <TextView
+                android:id="@+id/tv_retry"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:background="@drawable/shape_btn"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="@string/retry"
+                android:visibility="gone"/>
+        </FrameLayout>
 
-        <ProgressBar
-            android:id="@+id/pb_loading"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:minHeight="20dp"
-            android:padding="10dp"
-            android:progressDrawable="@drawable/shape_progressbar" />
 
         <TextView
             android:layout_width="wrap_content"
