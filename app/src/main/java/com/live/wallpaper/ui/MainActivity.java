@@ -66,12 +66,16 @@ public class MainActivity extends BaseActivity<MainPresent> implements MainContr
 
     @Override
     protected void initView() {
-        SettingsUtil.setString("videoUrl","");
+        LogUtil.e("视频壁纸","首页---initView");
         initRefreshLayout();
         initRecycleView();
-        deleteFile();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        deleteFile();
+    }
 
     @Override
     protected void initEvent() {
@@ -119,6 +123,7 @@ public class MainActivity extends BaseActivity<MainPresent> implements MainContr
         if(ValidateUtils.isValidate(layout_refresh)){
             layout_refresh.autoRefresh();
         }
+        ryPicList.scrollToPosition(0);
     }
 
     private void initRecycleView() {
@@ -146,6 +151,7 @@ public class MainActivity extends BaseActivity<MainPresent> implements MainContr
     }
 
     private void deleteFile(){
+        LogUtil.e("视频壁纸","删除文件");
         File file = null;
         String fileParent = mContext.getExternalFilesDir("downVideo").getAbsolutePath() + File.separator;
         file=new File(fileParent);

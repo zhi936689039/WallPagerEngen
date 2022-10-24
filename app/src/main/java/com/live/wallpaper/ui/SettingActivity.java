@@ -15,6 +15,7 @@ import com.live.wallpaper.util.ValidateUtils;
  */
 public class SettingActivity extends BaseActivity {
     private RateDialogFragment mDialogFragment;
+    private boolean isShow;
     @Override
     public void getLayoutId() {
         setContentView(R.layout.activity_setting);
@@ -30,6 +31,7 @@ public class SettingActivity extends BaseActivity {
         findViewById(R.id.rl_evaluation).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                isShow=true;
                 mDialogFragment.show(getSupportFragmentManager(),"dialog");
             }
         });
@@ -54,7 +56,7 @@ public class SettingActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(ValidateUtils.isValidate(mDialogFragment)){
+        if(ValidateUtils.isValidate(mDialogFragment)&&mDialogFragment.getDialog()!=null&&mDialogFragment.getDialog().isShowing()){
             mDialogFragment.dismissAllowingStateLoss();
             mDialogFragment=null;
         }

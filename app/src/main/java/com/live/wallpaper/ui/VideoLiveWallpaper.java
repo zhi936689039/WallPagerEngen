@@ -36,7 +36,6 @@ import java.io.IOException;
 public class VideoLiveWallpaper extends WallpaperService {
     private static final String SERVICE_NAME = "com.live.wallpaper.VideoLiveWallpaper";
 
-
     public Engine onCreateEngine() {
         return new VideoEngine();
     }
@@ -48,13 +47,14 @@ public class VideoLiveWallpaper extends WallpaperService {
      *
      * @param context
      */
-    public void setToWallPaper(Context context, String videoPath) {
+    public void setToWallPaper(Context context, String videoPath,String file_videoPath) {
         try {
             WallpaperManager.getInstance(context).clear();
         } catch (IOException e) {
             e.printStackTrace();
         }
         SettingsUtil.setString(Constants.videoUrl, videoPath);
+        SettingsUtil.setString(Constants.file_video_url, file_videoPath);
         Intent intent = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
         intent.putExtra(WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT, new ComponentName(context, VideoLiveWallpaper.class));
         context.startActivity(intent);
@@ -82,52 +82,61 @@ public class VideoLiveWallpaper extends WallpaperService {
             LogUtil.d(TAG, "VideoEngine#onVisibilityChanged visible = " + visible);
             if (visible) {
                 mMediaPlayer.start();
-//                if (isPreview()) {
-//                    try {
-//                        clearWallpaper();
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
             } else {
-                mMediaPlayer.pause();
+                if (mMediaPlayer.isPlaying()) {
+                    mMediaPlayer.stop();
+                    try {
+                        mMediaPlayer.prepare();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
 
 
-        @Override
-        public void onSurfaceCreated(SurfaceHolder holder) {
-            LogUtil.d(TAG, "VideoEngine#onSurfaceCreated ");
-            super.onSurfaceCreated(holder);
-            mMediaPlayer = new MediaPlayer();
-            mMediaPlayer.setSurface(holder.getSurface());
-            try {
-                mMediaPlayer.setDataSource(SettingsUtil.getString(Constants.videoUrl, ""));
-                mMediaPlayer.setLooping(true);
-                mMediaPlayer.setVolume(0, 0);
-                mMediaPlayer.prepare();
-                mMediaPlayer.start();
+            @Override
+            public void onSurfaceCreated (SurfaceHolder holder){
+                LogUtil.d(TAG, "VideoEngine#onSurfaceCreated ");
+                super.onSurfaceCreated(holder);
+                mMediaPlayer = new MediaPlayer();
+                mMediaPlayer.setSurface(holder.getSurface());
+                String videoPath;
+                try {
+                    LogUtil.e("视频壁纸","文件url:"+SettingsUtil.getString(Constants.file_video_url,"")
+                            +"网络url:"+SettingsUtil.getString(Constants.videoUrl,""));
+                    File file=new File(SettingsUtil.getString(Constants.file_video_url,""));
+                    if(file.exists()){
+                        videoPath=SettingsUtil.getString(Constants.file_video_url,"");
+                    }else{
+                        videoPath=SettingsUtil.getString(Constants.videoUrl,"");
+                    }
+                    mMediaPlayer.setDataSource(videoPath);
+                    mMediaPlayer.setLooping(true);
+                    mMediaPlayer.setVolume(0, 0);
+                    mMediaPlayer.prepare();
+                    mMediaPlayer.start();
 
-            } catch (IOException e) {
-                e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
             }
 
+            @Override
+            public void onSurfaceChanged (SurfaceHolder holder,int format, int width, int height){
+                LogUtil.d(TAG, "VideoEngine#onSurfaceChanged===isPreview： " + isPreview());
+                super.onSurfaceChanged(holder, format, width, height);
+            }
+
+            @Override
+            public void onSurfaceDestroyed (SurfaceHolder holder){
+                LogUtil.d(TAG, "VideoEngine#onSurfaceDestroyed ");
+                super.onSurfaceDestroyed(holder);
+                mMediaPlayer.release();
+                mMediaPlayer = null;
+            }
         }
 
-        @Override
-        public void onSurfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-            LogUtil.d(TAG, "VideoEngine#onSurfaceChanged===isPreview： " + isPreview());
-            super.onSurfaceChanged(holder, format, width, height);
-        }
 
-        @Override
-        public void onSurfaceDestroyed(SurfaceHolder holder) {
-            LogUtil.d(TAG, "VideoEngine#onSurfaceDestroyed ");
-            super.onSurfaceDestroyed(holder);
-            mMediaPlayer.release();
-            mMediaPlayer = null;
-        }
     }
-
-
-}  

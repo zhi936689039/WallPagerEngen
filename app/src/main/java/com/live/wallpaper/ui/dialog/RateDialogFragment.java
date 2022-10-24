@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
 import com.live.wallpaper.R;
+import com.live.wallpaper.util.LogUtil;
 import com.live.wallpaper.util.ToastUtils;
 import com.live.wallpaper.util.ValidateUtils;
 
@@ -38,6 +39,14 @@ public class RateDialogFragment extends DialogFragment {
         mDialogFragment=new FeedBackDialogFragment();
         event(view);
         return dialog;
+    }
+    @Override
+    public void dismiss() {
+        if (getFragmentManager()==null){
+            LogUtil.w("fragment", "dismiss: "+this+" not associated with a fragment manager." );
+        }else {
+            super.dismissAllowingStateLoss();
+        }
     }
     private void event(View view){
         view.findViewById(R.id.iv_close).setOnClickListener(new View.OnClickListener() {
