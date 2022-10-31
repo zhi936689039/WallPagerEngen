@@ -60,7 +60,7 @@ build.minSdkVersion = 21
 build.targetSdkVersion = 31
 build.BuildVersionCode = 1
 build.BuildVersionName = "1.0.0"
-build.App_applicationId="com.live.wallpaper"
+build.App_applicationId="com.oyzb.wallpaper"
 dep.build = build
 
 ext.dep = dep

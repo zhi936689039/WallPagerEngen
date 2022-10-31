@@ -79,8 +79,8 @@
     public static ** valueOf(java.lang.String);
 }
 
--keep class com.live.wallpaper.util.LogUtil{*;}
--keep class com.live.wallpaper.util.ToastUtils{*;}
+-keep class com.oyzb.wallpaper.util.LogUtil{*;}
+-keep class com.oyzb.wallpaper.util.ToastUtils{*;}
 
 # androidx 保留继承自系统自带组件等的子类
 -keep class com.google.android.material.** {*;}
@@ -170,7 +170,7 @@
 -keep class java.lang.ClassValue
 
 # model
--keep class com.live.wallpaper.bean.*{*;}
+-keep class com.oyzb.wallpaper.bean.*{*;}
 
 ################ 第三方 Jar ################
 # retrofit
