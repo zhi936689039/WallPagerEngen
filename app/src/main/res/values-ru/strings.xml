@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="MissingTranslation">3D Live Wallpaper Parallax</string>
+    <string name="set_Wallpager">Установка обоев</string>
+    <string name="Wallpager_loading">обои загружаются...</string>
+    <string name="setting">настраивать</string>
+    <string name="evaluation">Оценка</string>
+    <string name="Privacy_Policy">Политика конфиденциальности</string>
+    <string name="Rate_Us">свяжитесь с нами</string>
+    <string name="feed_back_content">Вам нравится это приложение? Дайте нам 5-звездочный обзор сейчас, чтобы начать работу в Google Play Store!</string>
+    <string name="feed_back_title">Обратная связь</string>
+    <string name="feed_back_tips">Мы искренне надеемся на ваши отзывы, спасибо!</string>
+    <string name="email">Email...</string>
+    <string name="suggestion">ваше предложение...</string>
+    <string name="submit">Разместить</string>
+    <string name="feed_back_success">обратная связь успех</string>
+    <string name="google_play_install_tip">Пожалуйста, установите Google Store</string>
+    <string name="retry">Повторить попытку</string>
+</resources>

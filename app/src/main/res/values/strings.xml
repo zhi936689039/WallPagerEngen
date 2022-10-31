@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name">4D WallPaper</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="MissingTranslation">3D Live Wallpaper Parallax</string>
     <string name="set_Wallpager">设置壁纸</string>
     <string name="Wallpager_loading">壁纸正在加载中...</string>
     <string name="setting">设置</string>
@@ -13,7 +13,6 @@
     <string name="suggestion">您的建议...</string>
     <string name="submit">提交</string>
     <string name="feed_back_success">反馈成功</string>
-    <string name="splash_content">3D LiveWallPager Prime</string>
     <string name="google_play_install_tip">请安装谷歌商店</string>
     <string name="retry">重试</string>
 </resources>

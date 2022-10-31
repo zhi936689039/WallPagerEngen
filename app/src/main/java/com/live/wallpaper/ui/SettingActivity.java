@@ -1,5 +1,7 @@
 package com.live.wallpaper.ui;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
 
 import com.live.wallpaper.R;
@@ -39,6 +41,16 @@ public class SettingActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        findViewById(R.id.tv_private_policy).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                Uri content_url = Uri.parse("https://www.freeprivacypolicy.com/live/7251bbf5-a3da-4b34-9bd1-87ecfa114841");
+                intent.setData(content_url);
+                startActivity(intent);
             }
         });
     }

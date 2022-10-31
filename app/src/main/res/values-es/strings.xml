@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="MissingTranslation">3D Live Wallpaper Parallax</string>
+    <string name="set_Wallpager">establecer fondo de pantalla</string>
+    <string name="Wallpager_loading">el fondo de pantalla se está cargando...</string>
+    <string name="setting">configurar</string>
+    <string name="evaluation">Evaluación</string>
+    <string name="Privacy_Policy">Política de privacidad</string>
+    <string name="Rate_Us">Contáctenos</string>
+    <string name="feed_back_content">¿Disfrutas de esta aplicación? Danos una reseña de 5 estrellas ahora para comenzar en Google Play Store.</string>
+    <string name="feed_back_title">retroalimentación</string>
+    <string name="feed_back_tips">Esperamos sinceramente sus comentarios, ¡gracias!</string>
+    <string name="email">Email...</string>
+    <string name="suggestion">tu sugerencia...</string>
+    <string name="submit">enviar</string>
+    <string name="feed_back_success">retroalimentacion exito</string>
+    <string name="google_play_install_tip">Instale la tienda de Google</string>
+    <string name="retry">Rever</string>
+</resources>

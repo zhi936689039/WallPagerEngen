@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">4D WallPaper</string>
     <string name="set_Wallpager">memasang wallpaper</string>
     <string name="Wallpager_loading">wallpaper sedang dimuat...</string>
     <string name="setting">mempersiapkan</string>
@@ -13,7 +12,6 @@
     <string name="suggestion">saranmu...</string>
     <string name="submit">Kirimkan</string>
     <string name="feed_back_success">umpan balik sukses</string>
-    <string name="splash_content">3D LiveWallPager Prime</string>
     <string name="google_play_install_tip">Silakan instal toko google</string>
     <string name="retry">Mencoba kembali</string>
 </resources>

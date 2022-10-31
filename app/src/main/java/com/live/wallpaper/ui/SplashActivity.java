@@ -31,7 +31,7 @@ public class SplashActivity extends BaseActivity {
     protected void initView() {
         try{
             PackageInfo pInfo=mContext.getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_META_DATA);
-            tv_splash_content.setText(mContext.getResources().getString(R.string.splash_content)
+            tv_splash_content.setText(mContext.getResources().getString(R.string.app_name)
                     + " "+Calendar.getInstance().get(Calendar.YEAR)+" V"+pInfo.versionName);
 
             new Handler().postDelayed(new Runnable() {
