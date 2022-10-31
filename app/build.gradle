@@ -11,10 +11,27 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        debug {
+            storeFile file("keystore/wall_pager.keystore")
+            storePassword "qx75ze15"
+            keyAlias "wallpager"
+            keyPassword "qx75ze15"
+        }
+        release {
+            storeFile file("keystore/wall_pager.keystore")
+            storePassword "qx75ze15"
+            keyAlias "wallpager"
+            keyPassword "qx75ze15"
+        }
+    }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

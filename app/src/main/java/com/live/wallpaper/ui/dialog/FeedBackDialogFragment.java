@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,6 +32,8 @@ public class FeedBackDialogFragment extends DialogFragment {
     EditText et_suggestion;
     @BindView(R.id.tv_ok)
     TextView tv_ok;
+    @BindView(R.id.iv_close)
+    ImageView iv_close;
     private Unbinder unbinder;
     private MainPresent mPresent;
     @NotNull
@@ -54,6 +57,12 @@ public class FeedBackDialogFragment extends DialogFragment {
             @Override
             public void onClick(View v) {
                 mPresent.feedBack(getContext(),et_email.getText().toString(),et_suggestion.getText().toString());
+            }
+        });
+        iv_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissAllowingStateLoss();
             }
         });
     }
