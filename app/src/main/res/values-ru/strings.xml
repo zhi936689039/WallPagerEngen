@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" tools:ignore="MissingTranslation">3D Live Wallpaper Parallax</string>
+    <string name="app_name" tools:ignore="MissingTranslation">Wallpaper hidup 3D-4K&amp;HD</string>
     <string name="set_Wallpager">Установка обоев</string>
     <string name="Wallpager_loading">обои загружаются...</string>
     <string name="setting">настраивать</string>
