@@ -55,9 +55,9 @@ dep.rxbinding='com.jakewharton.rxbinding3:rxbinding:3.0.0-alpha2'
 
 def build = [:]
 build.javaVersion = JavaVersion.VERSION_1_8
-build.compileSdkVersion = 31
+build.compileSdkVersion = 33
 build.minSdkVersion = 21
-build.targetSdkVersion = 31
+build.targetSdkVersion = 33
 build.BuildVersionCode = 1
 build.BuildVersionName = "1.0.0"
 build.App_applicationId="com.oyzb.wallpaper"
